@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ProvinceRepository extends JpaRepository<Province, String> {
+public interface ProvinceRepository extends JpaRepository<Province, Integer> {
 
     @Query(value = "SELECT * FROM provinces WHERE administrative_region_id = ?1", nativeQuery = true)
     List<Province> findProvincesByRegionId(Integer regionId);

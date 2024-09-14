@@ -23,8 +23,26 @@ public class ProvinceService {
                 .collect(Collectors.toList());
     }
 
-    public ProvinceResponse getProvinceResponseByCode(String code) {
+    public ProvinceResponse getProvinceResponseByCode(int code) {
         Province province = repository.findById(code).orElse(null);
         return province != null ? new ProvinceResponse(province) : null;
+    }
+
+    public List<ProvinceResponse> findProvincesByUnitId(int unitId) {
+        return repository.findProvincesByUnitId(unitId).stream()
+                .map(ProvinceResponse::new)
+                .collect(Collectors.toList());
+    }
+
+    public List<ProvinceResponse> findProvincesByRegionId(int regionId) {
+        return repository.findProvincesByRegionId(regionId).stream()
+                .map(ProvinceResponse::new)
+                .collect(Collectors.toList());
+    }
+
+    public List<ProvinceResponse> findProvincesByRegionIdAndUnitId(int regionId, int unitId) {
+        return repository.findProvincesByRegionIdAndUnitId(regionId, unitId).stream()
+                .map(ProvinceResponse::new)
+                .collect(Collectors.toList());
     }
 }

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ProvinceResponse {
-    private String code;
+    private int code;
     private String name;
     private String nameEn;
     private String administrativeRegionName;

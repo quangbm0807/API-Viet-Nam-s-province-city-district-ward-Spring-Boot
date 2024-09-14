@@ -19,8 +19,24 @@ public class ProvinceController {
         return service.getAllProvinceResponses();
     }
 
-    @GetMapping("/{code}")
-    public ProvinceResponse getByCode(@PathVariable String code) {
+    @GetMapping("/")
+    public ProvinceResponse getByCode(@RequestParam int code) {
         return service.getProvinceResponseByCode(code);
     }
+
+    @GetMapping("/region")
+    public List<ProvinceResponse> getByRegion(@RequestParam int regionId) {
+        return service.findProvincesByRegionId(regionId);
+    }
+
+    @GetMapping("/unit")
+    public List<ProvinceResponse> getByUnit(@RequestParam int unitId) {
+        return service.findProvincesByUnitId(unitId);
+    }
+
+    @GetMapping("/region&unit")
+    public List<ProvinceResponse> getByUnit(@RequestParam int regionId, @RequestParam int unitId) {
+        return service.findProvincesByRegionIdAndUnitId(regionId, unitId);
+    }
+
 }
