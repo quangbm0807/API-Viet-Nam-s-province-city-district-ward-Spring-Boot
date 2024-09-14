@@ -14,7 +14,7 @@ import lombok.Setter;
 public class AdministrativeRegion {
     @Id
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
