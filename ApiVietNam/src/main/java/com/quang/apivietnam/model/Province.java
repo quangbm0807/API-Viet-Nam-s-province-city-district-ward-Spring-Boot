@@ -35,5 +35,4 @@ public class Province {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "administrative_region_id")
     private AdministrativeRegion administrativeRegion;
-
 }
