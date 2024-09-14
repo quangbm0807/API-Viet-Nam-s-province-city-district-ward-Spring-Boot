@@ -27,5 +27,4 @@ public class AdministrativeRegion {
 
     @Column(name = "code_name_en")
     private String codeNameEn;
-
 }
